@@ -8,9 +8,7 @@ properties([
                 description: "Run test."),
 	string (name: 'BUILD_NUMBER_TO_USE', defaultValue: 'Last Successful build',
                 description: 'Build number to use if Build stage is skipped. Default uses Last successful build'),
-	string (name: 'TFSBUILDTYPE', defaultValue: 'NightlyLite',
-                choices: 'NightlyLite\nNightlyFull',
-                description: "Deprecated build type")
+	choice(choices: ['US-EAST-1', 'US-WEST-2'], description: 'What AWS region?', name: 'region')
   ])
 ])
 
