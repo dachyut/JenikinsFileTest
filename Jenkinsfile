@@ -1,7 +1,9 @@
 
 properties([
   parameters([
-    choice(choices: ['Branding', 'Non-Branding'], description: 'Build with branding or without branding', name: 'Build'),[$class: 'BuildSelectorParameter', defaultSelector: lastSuccessful(), description: 'Last Successful build', name: 'LAST_SUCCESSFUL_BUILD'],	
+	booleanParam (name: 'RUN_BUILD', defaultValue: true, description: "Run Build"),
+    choice(choices: ['Branding', 'Non-Branding'], description: 'Build with branding or without branding', name: 'BUILD_WITH'),
+	booleanParam (name: 'RUN_TEST', defaultValue: true, description: "Run Deploy, Smoke and Regression tests"),
 	string (name: 'BUILD_NUMBER_TO_USE', defaultValue: 'Last Successful build',
                 description: 'Build number to use if Build stage is skipped. Default uses Last successful build')	
   ])
