@@ -31,17 +31,7 @@ properties([
         booleanParam(
             name: 'FOO 3'
         ),
-	[$class: 'ExtensibleChoiceParameterDefinition', 
-                        choiceListProvider: [
-                           $class: 'TextareaChoiceListProvider', 
-                           choiceListText: 'foo\nbar',
-                           defaultChoice: 'bar',
-                           addEditedValue: false,
-                       ], 
-                       description: 'blah blah blah blah', 
-                       editable: true, 
-                       name: 'choose_mnt'
-                    ], 
+	extendedChoice (description: '', multiSelectDelimiter: ',', name: 'build3', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_RADIO', value: 'opt1,opt2,opt3', visibleItemCount: 5), 
 	booleanParam (name: 'RUN_BUILD', defaultValue: true, description: "Run Build"),
     choice(choices: ['Branding', 'Non-Branding'], description: 'Build with branding or without branding', name: 'BUILD_WITH'),
 	booleanParam (name: 'RUN_TEST', defaultValue: true, description: "Run Deploy, Smoke and Regression tests"),
