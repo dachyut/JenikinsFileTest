@@ -2,7 +2,7 @@
 properties([
   parameters([
 	
-	extendedChoice (description: '', multiSelectDelimiter: ',', name: 'build3', type: 'PT_RADIO', value: 'opt1,opt2,opt3', defaultValue: opt1), 
+	extendedChoice (description: '', multiSelectDelimiter: ',', name: 'build3', type: 'PT_RADIO', value: 'opt1,opt2,opt3', defaultValue: 'opt1'), 
 	
 	booleanParam (name: 'RUN_BUILD', defaultValue: true, description: "Run Build"),
     
