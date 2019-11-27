@@ -1,14 +1,9 @@
 
 properties([
   parameters([
-    [$class: 'BuildSelectorParameter', defaultSelector: lastSuccessful(), description: 'Last Successful build', name: 'LAST_SUCCESSFUL_BUILD'],
-	booleanParam (name: 'RUN_BUILD', defaultValue: true,
-                description: "Run build."),
-	booleanParam (name: 'DEPLOY_VAULT_AND_RUN_REGRESSION_TEST', defaultValue: true,
-                description: "Run test."),
+    choice(choices: ['Branding', 'Non-Branding'], description: 'Build with branding or without branding', name: 'Build'),[$class: 'BuildSelectorParameter', defaultSelector: lastSuccessful(), description: 'Last Successful build', name: 'LAST_SUCCESSFUL_BUILD'],	
 	string (name: 'BUILD_NUMBER_TO_USE', defaultValue: 'Last Successful build',
-                description: 'Build number to use if Build stage is skipped. Default uses Last successful build'),
-	choice(choices: ['US-EAST-1', 'US-WEST-2'], description: 'What AWS region?', name: 'region')
+                description: 'Build number to use if Build stage is skipped. Default uses Last successful build')	
   ])
 ])
 
