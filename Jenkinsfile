@@ -10,7 +10,7 @@ properties([
                 description: 'Build number to use if Build stage is skipped. Default uses Last successful build'),
 	string (name: 'TFSBUILDTYPE', defaultValue: 'NightlyLite',
                 choices: 'NightlyLite\nNightlyFull',
-                description: "Deprecated build type)
+                description: "Deprecated build type")
   ])
 ])
 
