@@ -22,13 +22,13 @@ properties([
             separatorStyle: separatorStyle,
             sectionHeaderStyle: sectionHeaderStyle
         ],
-        string(
+        booleanParam(
             name: 'FOO 1'
         ),
-        string(
+        booleanParam(
             name: 'FOO 2'
         ),
-        string(
+        booleanParam(
             name: 'FOO 3'
         ),
 	booleanParam (name: 'RUN_BUILD', defaultValue: true, description: "Run Build"),
