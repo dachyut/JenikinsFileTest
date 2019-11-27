@@ -1,6 +1,36 @@
+String sectionHeaderStyle = '''
+    color: white;
+    background: green;
+    font-family: Roboto, sans-serif !important;
+    padding: 5px;
+    text-align: center;
+'''
+
+String separatorStyle = '''
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+'''
+
 
 properties([
   parameters([
+	[
+            $class: 'ParameterSeparatorDefinition',
+            name: 'FOO_HEADER',
+            sectionHeader: 'Foo Parameters',
+            separatorStyle: separatorStyle,
+            sectionHeaderStyle: sectionHeaderStyle
+        ],
+        string(
+            name: 'FOO 1'
+        ),
+        string(
+            name: 'FOO 2'
+        ),
+        string(
+            name: 'FOO 3'
+        ),
 	booleanParam (name: 'RUN_BUILD', defaultValue: true, description: "Run Build"),
     choice(choices: ['Branding', 'Non-Branding'], description: 'Build with branding or without branding', name: 'BUILD_WITH'),
 	booleanParam (name: 'RUN_TEST', defaultValue: true, description: "Run Deploy, Smoke and Regression tests"),
