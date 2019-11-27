@@ -4,7 +4,7 @@ properties([
 		
 	booleanParam (name: 'RUN_BUILD', defaultValue: true, description: "Run Build"),
 	
-	extendedChoice (description: 'Build with branding or without branding', multiSelectDelimiter: ',', name: 'BUILD_WITH', type: 'PT_RADIO', value: 'Branding,Non-Branding', defaultValue: 'Non-Branding'),	
+	extendedChoice (description: 'Build with branding or without branding', multiSelectDelimiter: ',', name: 'BUILD_WITH', type: 'PT_RADIO', value: 'Branding,Non-Branding', defaultValue: (params.RUN_BUILD)?'Non-Branding':'Branding'),	
     	
 	booleanParam (name: 'RUN_TEST', defaultValue: true, description: "Run Deploy, Smoke and Regression tests"),
 	
