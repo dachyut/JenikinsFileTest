@@ -15,9 +15,12 @@ properties([
 
 node {       
 		stage ('Build') {
-			println "******"
-			println params.BUILD_WITH
-			println "******"
+			if (params.BUILD_WITH == 'Branding') {
+				currentBuild.description = "Branding"
+			}
+			else {
+				currentBuild.description = "Non-Branding"
+			}			
 		}
 		
 		stage ('Test') {
