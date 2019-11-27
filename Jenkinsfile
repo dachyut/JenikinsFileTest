@@ -42,6 +42,9 @@ properties([
 
 node {       
 		stage ('Build') {
+			println "******"
+			println params.build3
+			println "******"
 		}
 		
 		stage ('Test') {
