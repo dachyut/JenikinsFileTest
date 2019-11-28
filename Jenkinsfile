@@ -28,12 +28,7 @@ properties([
                 description: 'If true, Deploys Valut and run Smoke, Regression tests.'),
             string (name: 'BUILD_NUMBER_TO_USE', defaultValue: 'Last Successful build',
                 description: 'Build number to use if Build stage is skipped. Default uses Last successful build')
-    ]),
-    disableConcurrentBuilds(),  // Dont let more than one instance of this pipeline run at a time so we don't freeze out everyone else
-    buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: buildsToKeep)),
-    pipelineTriggers([cron(cronString)]),
-    [$class: 'WebhookJobProperty', webhooks: [generateCEBWebhook (branchName),
-                                              generateBB8Webhook (branchName)] ]
+    ])
 ])
 
 node {       
