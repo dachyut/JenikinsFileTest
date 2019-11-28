@@ -22,7 +22,7 @@ properties([
             booleanParam (name: 'RUN_BUILD', defaultValue: true,
                 description: 'If true, run the Build stage.'),
             choice (name: 'BUILD_WITH',
-                choices: ['Non-Branding', 'Branding'],
+                choices: 'Non-Branding\nBranding',
                 description: 'Build with branding or without branding'),
             booleanParam (name: 'DEPLOY_VAULT_SMOKE_AND_REGRESSION_TEST', defaultValue: true,
                 description: 'If true, Deploys Valut and run Smoke, Regression tests.'),
